@@ -40,10 +40,10 @@ class PetsController < ApplicationController
 def busca_perfil
 
   respond_to do |format|
-
-      if !params[:session][:nome].empty? && !params[:session][:email].empty?
-        session[:nome]=params[:session][:nome]
+session[:nome]=params[:session][:nome]
         session[:email]=params[:session][:email]
+      if !params[:session][:nome].empty? && !params[:session][:email].empty?
+        
         session[:apartamento]=params[:session][:apartamento]
         params[:session][:condominio]=params[:session][:condominio]
         params[:session][:areapet]=params[:session][:areapet]
