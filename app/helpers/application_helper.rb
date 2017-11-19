@@ -1,11 +1,11 @@
 module ApplicationHelper
 
 def pageTitle(name)
-  default = "Speedfy"
+ default = "Acolha um Amigo"
   if name.empty?
    return  default
   else
-   return name + " | "+ default
+   return default
 end
 end
 

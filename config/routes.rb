@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 	get 'home' => 'index#home'
 	get 'busca' => 'pets#busca'
 	get 'petcadastro' => 'pets#petcadastro'
+        get 'listabusca' => 'pets#listabusca'
 	resources :pets
 	resources :index
 end
