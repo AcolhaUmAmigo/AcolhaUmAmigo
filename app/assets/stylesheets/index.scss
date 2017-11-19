@@ -124,7 +124,7 @@ p{
 }
 
 .wag-header {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)), url("capa.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)), url(asset_path("capa.jpg"));
   background-repeat: none;
   background-position: center center;
   -webkit-background-size: cover;
