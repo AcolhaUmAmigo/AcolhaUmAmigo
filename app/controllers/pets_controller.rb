@@ -37,6 +37,32 @@ class PetsController < ApplicationController
     end
   end
 
+def busca_perfil
+
+  respond_to do |format|
+
+      if !params[:session][:nome].empty? && !params[:session][:email].empty?
+        session[:nome]=params[:session][:nome]
+        session[:email]=params[:session][:email]
+        session[:apartamento]=params[:session][:apartamento]
+        params[:session][:condominio]=params[:session][:condominio]
+        params[:session][:areapet]=params[:session][:areapet]
+        params[:session][:horalivre]=params[:session][:horalivre]
+        params[:session][:crianca]=params[:session][:crianca]
+        params[:session][:caosozinho]=params[:session][:caosozinho]
+        params[:session][:caosala]=params[:session][:caosala]
+        params[:session][:renda]=params[:session][:renda]
+       format.html {  redirect_to listabusca_path, notice: 'Usuario logado com sucesso' }
+       format.json { }
+     else
+       format.html {  redirect_to busca_path, error: 'Insira um nome e um email' }
+       format.json { }
+      end
+    end
+
+end
+
+
   # PATCH/PUT /pets/1
   # PATCH/PUT /pets/1.json
   def update

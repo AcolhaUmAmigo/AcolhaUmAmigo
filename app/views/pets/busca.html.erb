@@ -8,19 +8,21 @@
           <h4 class="contact-p text-center">Olá, estamos quase lá, antes de você encontrar o pet ideal, você irá preencher alguns dados e clicar nas checkboxs caso as frases se encaixem no seu perfil, assim o nosso sistema consegue computar os cachorros ideais para você.  Desde já obrigado pelo seu bom coração.</h4>
 
         </div>
+        <%= form_for(:session, url: perfil_path) do |f| %>
         <div class="col-md-8 col-md-offset-2">
           <form>
             <div class="row">
               <div class="col-sm-6">
                 <div class="form-group">
                   <label for="name">Seu nome</label>
-                  <input id="nome" type="text" class="form-control">
+                  <%= f.text_field :nome, class: 'form-control',placeholder: session[:nome] %>
+                  
                 </div>
               </div>
               <div class="col-sm-6">
                 <div class="form-group">
                   <label for="email">Email</label>
-                  <input id="email" type="text" class="form-control">
+                  <%= f.text_field :email, class: 'form-control',placeholder: session[:email]  %>
                 </div>
               </div>
                 
@@ -29,7 +31,7 @@
       <div class="form-group">
     <div class="input-group">
       <span class="input-group-addon">
-        <input type="checkbox" >
+         <%= f.check_box :apartamento, {}, 1, 0 %>
       </span>
       <input type="text" class="form-control" placeholder=" Moro em apartamento" disabled>
     </div><!-- /input-group -->
@@ -40,7 +42,7 @@
     <div class="form-group">
     <div class="input-group">
       <span class="input-group-addon">
-        <input type="checkbox" >
+         <%= f.check_box :condominio, {}, 1, 0 %>
       </span>
       <input type="text" class="form-control" placeholder="Moro em um condominio" disabled >
     </div><!-- /input-group -->
@@ -51,7 +53,7 @@
     <div class="form-group">
     <div class="input-group">
       <span class="input-group-addon">
-        <input type="checkbox" >
+        <%= f.check_box :areapet, {}, 1, 0 %>
       </span>
       <input type="text" class="form-control" placeholder="Tenho uma área para o futuro pet" disabled>
     </div><!-- /input-group -->
@@ -61,7 +63,7 @@
       <div class="form-group">
     <div class="input-group">
       <span class="input-group-addon">
-        <input type="checkbox" >
+        <%= f.check_box :horalivre, {}, 1, 0 %>
       </span>
       <input type="text" class="form-control" placeholder="Tenho mais de uma hora livre para o pet" disabled>
     </div><!-- /input-group -->
@@ -72,7 +74,7 @@
     <div class="form-group">
     <div class="input-group">
       <span class="input-group-addon">
-        <input type="checkbox" >
+        <%= f.check_box :crianca, {}, 1, 0 %>
       </span>
       <input type="text" class="form-control" placeholder="Tenho criança(s) menor que 10 anos" disabled>
     </div><!-- /input-group -->
@@ -82,7 +84,7 @@
 <div class="form-group">
         <div class="input-group">
       <span class="input-group-addon">
-        <input type="checkbox" >
+        <%= f.check_box :caosozinho, {}, 1, 0 %>
       </span>
       <input type="text" class="form-control" placeholder="Meu cão ficará mais de duas horas sozinho" disabled>
     </div><!-- /input-group -->
@@ -93,7 +95,7 @@
 <div class="form-group">
         <div class="input-group">
       <span class="input-group-addon">
-        <input type="checkbox" >
+        <%= f.check_box :caosala, {}, 1, 0 %>
       </span>
       <input type="text" class="form-control" placeholder="Meu cão poderá ficar na sala de estar" disabled>
     </div><!-- /input-group -->
@@ -104,15 +106,16 @@
 <div class="form-group">
         <div class="input-group">
       <span class="input-group-addon">
-        <input type="checkbox" >
+        <%= f.check_box :renda, {}, 1, 0 %>
       </span>
       <input type="text" class="form-control" placeholder="Renda maior que mil reais por pessoa" disabled>
     </div><!-- /input-group -->
   </div><!-- /.col-lg-6 -->
 </div>
                 <div class="formsend">
-                  <button type="submit" class="btn btn-block" > Procurar </button>
+                <%= f.submit "Procurar", class: "btn btn-block" %>
                 </div>
+                <%end%>
             </div>
           </form>
         </div>
