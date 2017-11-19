@@ -1,0 +1,97 @@
+<%= form_with(model: pet, local: true) do |form| %>
+  <% if pet.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(pet.errors.count, "error") %> prohibited this pet from being saved:</h2>
+
+      <ul>
+      <% pet.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :doadornome %>
+    <%= form.text_field :doadornome, id: :pet_doadornome %>
+  </div>
+
+  <div class="field">
+    <%= form.label :doadoremail %>
+    <%= form.text_field :doadoremail, id: :pet_doadoremail %>
+  </div>
+
+  <div class="field">
+    <%= form.label :petnome %>
+    <%= form.text_field :petnome, id: :pet_petnome %>
+  </div>
+
+  <div class="field">
+    <%= form.label :petraca %>
+    <%= form.text_field :petraca, id: :pet_petraca %>
+  </div>
+
+  <div class="field">
+    <%= form.label :petimagem %>
+    <%= form.text_field :petimagem, id: :pet_petimagem %>
+  </div>
+
+  <div class="field">
+    <%= form.label :petimagem_url %>
+    <%= form.text_field :petimagem_url, id: :pet_petimagem_url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :petobservacoes %>
+    <%= form.text_area :petobservacoes, id: :pet_petobservacoes %>
+  </div>
+
+  <div class="field">
+    <%= form.label :petinsercao %>
+    <%= form.time_select :petinsercao, id: :pet_petinsercao %>
+  </div>
+
+  <div class="field">
+    <%= form.label :petidade %>
+    <%= form.number_field :petidade, id: :pet_petidade %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pettamanho %>
+    <%= form.text_field :pettamanho, id: :pet_pettamanho %>
+  </div>
+
+  <div class="field">
+    <%= form.label :petchora %>
+    <%= form.number_field :petchora, id: :pet_petchora %>
+  </div>
+
+  <div class="field">
+    <%= form.label :petsegue %>
+    <%= form.number_field :petsegue, id: :pet_petsegue %>
+  </div>
+
+  <div class="field">
+    <%= form.label :petagitado %>
+    <%= form.number_field :petagitado, id: :pet_petagitado %>
+  </div>
+
+  <div class="field">
+    <%= form.label :petlateestranhos %>
+    <%= form.number_field :petlateestranhos, id: :pet_petlateestranhos %>
+  </div>
+
+  <div class="field">
+    <%= form.label :petavanca %>
+    <%= form.number_field :petavanca, id: :pet_petavanca %>
+  </div>
+
+  <div class="field">
+    <%= form.label :petproblemassaude %>
+    <%= form.number_field :petproblemassaude, id: :pet_petproblemassaude %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

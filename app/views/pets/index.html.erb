@@ -1,0 +1,57 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Pets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Doadornome</th>
+      <th>Doadoremail</th>
+      <th>Petnome</th>
+      <th>Petraca</th>
+      <th>Petimagem</th>
+      <th>Petimagem url</th>
+      <th>Petobservacoes</th>
+      <th>Petinsercao</th>
+      <th>Petidade</th>
+      <th>Pettamanho</th>
+      <th>Petchora</th>
+      <th>Petsegue</th>
+      <th>Petagitado</th>
+      <th>Petlateestranhos</th>
+      <th>Petavanca</th>
+      <th>Petproblemassaude</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pets.each do |pet| %>
+      <tr>
+        <td><%= pet.doadornome %></td>
+        <td><%= pet.doadoremail %></td>
+        <td><%= pet.petnome %></td>
+        <td><%= pet.petraca %></td>
+        <td><%= pet.petimagem %></td>
+        <td><%= pet.petimagem_url %></td>
+        <td><%= pet.petobservacoes %></td>
+        <td><%= pet.petinsercao %></td>
+        <td><%= pet.petidade %></td>
+        <td><%= pet.pettamanho %></td>
+        <td><%= pet.petchora %></td>
+        <td><%= pet.petsegue %></td>
+        <td><%= pet.petagitado %></td>
+        <td><%= pet.petlateestranhos %></td>
+        <td><%= pet.petavanca %></td>
+        <td><%= pet.petproblemassaude %></td>
+        <td><%= link_to 'Show', pet %></td>
+        <td><%= link_to 'Edit', edit_pet_path(pet) %></td>
+        <td><%= link_to 'Destroy', pet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pet', new_pet_path %>

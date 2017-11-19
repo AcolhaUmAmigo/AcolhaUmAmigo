@@ -10,11 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170909223315) do
+ActiveRecord::Schema.define(version: 20171118231230) do
 
-  create_table "users", force: :cascade do |t|
-    t.string "nome"
-    t.string "email"
+  create_table "pets", force: :cascade do |t|
+    t.string "doadornome"
+    t.string "doadoremail"
+    t.string "petnome"
+    t.string "petraca"
+    t.string "petimagem"
+    t.string "petimagem_url"
+    t.text "petobservacoes"
+    t.time "petinsercao"
+    t.integer "petidade"
+    t.string "pettamanho"
+    t.integer "petchora"
+    t.integer "petsegue"
+    t.integer "petagitado"
+    t.integer "petlateestranhos"
+    t.integer "petavanca"
+    t.integer "petproblemassaude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
