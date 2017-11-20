@@ -9,36 +9,41 @@
 
         </div>
         <div class="col-md-8 col-md-offset-2">
-          <form>
+          
+          
+<%= form_with(model: Pet, local: true) do |f| %>
+  <%= f.hidden_field :petinsercao, id: :pet_petinsercao, value: Time.now %>
             <div class="row">
               <div class="col-sm-6">
                 <div class="form-group">
                   <label for="name">Seu nome</label>
-                  <input id="nome" type="text" class="form-control">
+                  <%= f.text_field :doadornome, id: :pet_doadornome,class: "form-control" %>
+                  
                 </div>
               </div>
               <div class="col-sm-6">
                 <div class="form-group">
                   <label for="email">Email</label>
-                  <input id="email" type="text" class="form-control">
+                  <%= f.text_field :doadoremail, id: :pet_doadoremail ,class: "form-control" %>
+                  
                 </div>
               </div>
               <div class="col-sm-6">
                 <div class="form-group">
                   <label for="cachorronome">Nome do Cachorrinho</label>
-                  <input id="cachorronome" type="text" class="form-control">
+                  <%= f.text_field :petnome, id: :pet_petnome ,class: "form-control" %>
                 </div>
               </div>
               <div class="col-sm-6">
                 <div class="form-group">
                   <label for="raca">Raça</label>
-                  <input id="raca" type="text" class="form-control">
+                  <%= f.text_field :petraca, id: :pet_petraca ,class: "form-control" %>
                 </div>
               </div>
                 <div class="col-sm-6">
                 <div class="form-group">
                   <label for="raca">Link da imagem do pet na Internet</label>
-                  <input id="raca" type="text" class="form-control">
+                  <%= f.text_field :imagem_url, id: :jogo_imagem ,class: "form-control" %>
                 </div>
               </div>
                 
@@ -46,13 +51,13 @@
                 <div class="col-sm-6">
                 <div class="form-group">
                   <label for="raca">Upload da imagem do seu computador</label>
-                  <input id="raca" type="text" class="form-control">
+                 <%= f.file_field(:imagem_upload, accept: 'image/png,image/jpeg') %>
                 </div>
               </div>
               <div class="col-sm-12">
                 <div class="form-group">
                   <label for="observacoes">Observações sobre o pet </label>
-                  <textarea id="observacoes" class="form-control input-lg"></textarea>
+                  <%= f.text_area :petobservacoes, id: :pet_petobservacoes, class: "form-control input-lg"%>
                 </div>
               </div>
               <div class="col-sm-12 text-center">
@@ -62,24 +67,15 @@
                 <div class="col-sm-6">
                 <div class="form-group">
                   <label for="idade">Idade do pet</label>
-                     <select id="idade" class="form-control">
-                    <option>Menos que 2 anos</option>
-                    <option>De 2 a 7 anos</option>
-                         <option>De 7 a 10 anos</option>
-                         <option>Mais de 10 anos</option>
+                  <%= f.number_field :petidade, id: :pet_petidade,in: 0..50, class: "form-control" %>
+
                     
-      </select>
                 </div>
               </div>
                 <div class="col-sm-6">
                 <div class="form-group">
                   <label for="tamanho">Tamanho</label>
-                    <select id="idade" class="form-control">
-                    <option>Mini/pequeno  - Exemplo: pug, yorkshire, shih-tzu</option>
-                    <option>Médio - Exemplo: beagle, bulldog francês, border collie</option>
-                    <option>Grande/gigante - Exemplo: dálmata, husky, labrador</option>
-                    </select>
-                  
+                   <%= f.select(:pettamanho,  options_for_select([['Mini/pequeno  - Exemplo: pug, yorkshire, shih-tzu','mini'],['Médio - Exemplo: beagle, bulldog francês, border collie','medio%'],['Grande/gigante - Exemplo: dálmata, husky, labrador','grande']]),{include_blank: ''} ,class: "form-control")%>   
                 </div>
               </div>
                 
@@ -88,7 +84,7 @@
       <div class="form-group">
     <div class="input-group">
       <span class="input-group-addon">
-        <input type="checkbox" >
+        <%= f.check_box :petchora, {}, 1, 0 %>
       </span>
       <input type="text" class="form-control" placeholder="Late/chora muito ?" disabled>
     </div><!-- /input-group -->
@@ -99,7 +95,7 @@
     <div class="form-group">
     <div class="input-group">
       <span class="input-group-addon">
-        <input type="checkbox" >
+        <%= f.check_box :petsegue, {}, 1, 0 %>
       </span>
       <input type="text" class="form-control" placeholder="O pet te segue ?" disabled >
     </div><!-- /input-group -->
@@ -110,7 +106,7 @@
     <div class="form-group">
     <div class="input-group">
       <span class="input-group-addon">
-        <input type="checkbox" >
+        <%= f.check_box :petagitado, {}, 1, 0 %>
       </span>
       <input type="text" class="form-control" placeholder="O pet fica agitado quando você está saindo ?" disabled>
     </div><!-- /input-group -->
@@ -120,7 +116,7 @@
       <div class="form-group">
     <div class="input-group">
       <span class="input-group-addon">
-        <input type="checkbox" >
+        <%= f.check_box :petlateestranhos, {}, 1, 0 %>
       </span>
       <input type="text" class="form-control" placeholder="Rosna/Late para estranhos ?" disabled>
     </div><!-- /input-group -->
@@ -131,7 +127,7 @@
     <div class="form-group">
     <div class="input-group">
       <span class="input-group-addon">
-        <input type="checkbox" >
+        <%= f.check_box :petavanca, {}, 1, 0 %>
       </span>
       <input type="text" class="form-control" placeholder="Já avançou em alguém sem motivos ?" disabled>
     </div><!-- /input-group -->
@@ -141,7 +137,7 @@
 <div class="form-group">
         <div class="input-group">
       <span class="input-group-addon">
-        <input type="checkbox" >
+        <%= f.check_box :petproblemassaude, {}, 1, 0 %>
       </span>
       <input type="text" class="form-control" placeholder="O pet possui problemas de saúde  ?" disabled>
     </div><!-- /input-group -->
@@ -150,8 +146,9 @@
                 
                 
                 <div class="formsend">
-                  <button type="submit" class="btn btn-block"> Cadastrar </button>
+                <%= f.submit "Cadastrar", class: "btn btn-block" %>
                 </div>
+                <%end%>
             </div>
           </form>
         </div>

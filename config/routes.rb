@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 	get 'petcadastro' => 'pets#petcadastro'
         get 'listabusca' => 'pets#listabusca'
         post 'perfil' => 'pets#busca_perfil'
+	post 'cadastro' => 'pets#create'
 	resources :pets
 	resources :index
 end

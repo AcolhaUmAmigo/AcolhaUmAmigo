@@ -28,10 +28,10 @@ class PetsController < ApplicationController
 
     respond_to do |format|
       if @pet.save
-        format.html { redirect_to @pet, notice: 'Pet was successfully created.' }
+        format.html { redirect_to home_path, notice: 'Pet was successfully created.' }
         format.json { render :show, status: :created, location: @pet }
       else
-        format.html { render :new }
+        format.html { redirect_to petcadastro_path, notice: 'Pet was not successfully created.' }
         format.json { render json: @pet.errors, status: :unprocessable_entity }
       end
     end
