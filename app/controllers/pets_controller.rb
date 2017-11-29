@@ -1,15 +1,19 @@
 class PetsController < ApplicationController
   before_action :set_pet, only: [:show, :edit, :update, :destroy]
-
+  
   # GET /pets
   # GET /pets.json
   def index
     @pets = Pet.all
   end
 
+  def listabusca
+ @pets = Pet.all
+  end
   # GET /pets/1
   # GET /pets/1.json
   def show
+    @pets = Pet.all
   end
 
   # GET /pets/new
